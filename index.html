@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valorant暴言ジェネレータ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Valorant暴言ジェネレータ</h1>
+        <p>
+            "<span id="randomNumber"></span>レベになってまでも適正<span id="valorantRank"></span>ですらないドへたくそボトム<span id="character"></span>君不貞腐れで指示やめてぇ～！！そもそも<span id="mapName"></span>で<span id="character2"></span>ってどうなってるの～～？？もしかして＃買い垢？（笑）キル取れてないのも全部自分のせいだよ～～二度とソロ回さないでね～ｗｗｗ味方に来ると迷惑だからさぁ～"
+        </p>
+        <img src="twitterBougen.png" alt="Twitter Bougen Image" style="max-width: 100%;">
+    </div>
+    <script>
+        // ランダムな値を生成する関数
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // ページが読み込まれたときにランダムな要素を置き換える
+        window.onload = function() {
+            document.getElementById("randomNumber").textContent = getRandomInt(1, 1000);
+            const ranks = ["アイアン", "ブロンズ", "シルバー", "ゴールド", "プラチナ", "ダイアモンド", "アセンダント", "イモータル"];
+            document.getElementById("valorantRank").textContent = ranks[Math.floor(Math.random() * ranks.length)];
+            const characters = ["ジェット", "レイズ", "フェニックス", "レイナ", "ヨル", "ネオン", "セージ", "サイファー", "キルジョイ", "チェンバー", "デッドロック", "ブリーチ", "ソーヴァ", "スカイ", "KAY/O", "フェイド", "ゲッコー", "オーメン", "ブリムストーン", "ヴァイパー", "アストラ", "ハーバー"];
+            const randomCharacter = characters[Math.floor(Math.random() * characters.length)];
+            document.getElementById("character").textContent = randomCharacter;
+            document.getElementById("character2").textContent = randomCharacter; // 2つの <キャラ> を同じキャラクターに設定
+            const maps = ["スプリット", "ヘイヴン", "バインド", "アセント", "ロータス", "ブリーズ", "サンセット", "アイスボックス", "フラクチャー", "パール"];
+            document.getElementById("mapName").textContent = maps[Math.floor(Math.random() * maps.length)];
+        };
+    </script>
+</body>
+</html>
